@@ -148,30 +148,3 @@ int main()
         delete temp;
     }
 }
-/*
-Let me explain this in a simpler way with a real-world example:
-
-Imagine you're typing this into your program:
-John Smith[Enter]
-
-What actually gets sent to the computer is:
-"John Smith\n"    (where \n is the Enter/Return key)
-
-When you use getline(), it will only store:
-"John Smith"      (notice the \n is gone)
-
-This is like if you wrote a note on paper:
-- The actual paper has "Hello" and then a crease where you folded it
-- getline() only copies the "Hello" part, not the fold
-
-This is different from cin >>, which:
-1. Reads input up to a space or newline
-2. Leaves everything else (including the \n) still waiting to be read
-
-That's why if you do:
-cin >> firstName;      // User types "John[Enter]"
-getline(cin, address); // This will read an empty line because the \n is still there
-
-The \n from the [Enter] key is still waiting to be read after cin >>,
-but getline() won't include it in what it stores.
-*/
